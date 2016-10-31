@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+
+tasks.withType(JavaCompile){
+   options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc){
+   options.encoding = 'UTF-8'
+}
+
+javadoc{
+   options.charSet = 'UTF-8'
+}
+   
+eclipse {
+   jdt {
+     sourceCompatibility = 1.8
+     targetCompatibility = 1.8
+   }
+}
+
+repositories {
+   mavenCentral()
+}
+dependencies {
+   compile 'mysql:mysql-connector-java:5.1.38'
+   // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+//compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+   
+}
